@@ -27,7 +27,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 }
 
-uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch)
+float speedValue(uint32_t period, uint8_t wheelSize_inch)
 {
 	float wheelSize_m = (float)wheelSize_inch * 0.0254;
 	float radius_m = wheelSize_m / 2;
@@ -35,7 +35,7 @@ uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch)
 
 	if(period > 0)
 	speed = (2.0*3.14*radius_m)/period_s;
-	else speed = 0;
+	else speed = 0.0;
 
-	return speed;
+	return speed*3600/1000;
 }

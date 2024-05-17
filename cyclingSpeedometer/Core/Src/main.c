@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "i2c.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -26,7 +27,9 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 #include "hall_sensor.h"
+#include "lps25hb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,6 +109,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_TIM6_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -113,10 +117,29 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_TIM_Base_Start_IT(&htim6);
+  lps25hb_init();
+
+  float p0 = lps25hb_read_pressure();
+
+  HAL_Delay(5000);
+
   while (1)
   {
-	speed = speedValue(period, 10);
-	printf("Speed = %.2f m/s \n", speed);
+	float temp = lps25hb_read_temp() + 273.15;
+	float p = lps25hb_read_pressure();
+	float h = -29.271769 * temp * log(p / p0);
+	float temperature_C = lps25hb_read_temp();
+
+	printf("T = %.1f *C\n", temperature_C);
+	printf("h = %.2f m\n", h);
+	HAL_Delay(1000);
+	printf("p = %.1f\n", p);
+	speed = speedValue(period, 2);
+//	printf("Speed = %.2f km/h \n", speed);
+
+
+
+
 
 
 

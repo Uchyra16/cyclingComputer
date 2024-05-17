@@ -18,4 +18,4 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 //Fucntion responsible for:
 //speed calculations based on radius and detection period
-uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch);
+float speedValue(uint32_t period, uint8_t wheelSize_inch);
