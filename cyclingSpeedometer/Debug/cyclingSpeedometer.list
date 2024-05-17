@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  00020204  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0001057b  00000000  00000000  00020247  2**0
+ 13 .debug_info   00010c5b  00000000  00000000  00020247  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 0000242f  00000000  00000000  000307c2  2**0
+ 14 .debug_abbrev 000025d3  00000000  00000000  00030ea2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000f50  00000000  00000000  00032bf8  2**3
+ 15 .debug_aranges 00000f68  00000000  00000000  00033478  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000be0  00000000  00000000  00033b48  2**0
+ 16 .debug_rnglists 00000bed  00000000  00000000  000343e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00027ca6  00000000  00000000  00034728  2**0
+ 17 .debug_macro  00027e8b  00000000  00000000  00034fcd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012980  00000000  00000000  0005c3ce  2**0
+ 18 .debug_line   000130d7  00000000  00000000  0005ce58  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000f3fcc  00000000  00000000  0006ed4e  2**0
+ 19 .debug_str    000f3fe6  00000000  00000000  0006ff2f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00004fec  00000000  00000000  00162d1c  2**2
+ 20 .debug_frame  00004ffc  00000000  00000000  00163f18  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000079  00000000  00000000  00167d08  2**0
+ 21 .debug_line_str 00000079  00000000  00000000  00168f14  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1335,236 +1335,236 @@ void MX_GPIO_Init(void)
  8000fc0:	40021000 	.word	0x40021000
  8000fc4:	48000800 	.word	0x48000800
 
-08000fc8 <__io_putchar>:
+08000fc8 <HAL_GPIO_EXTI_Callback>:
+volatile uint32_t current_time = 0;
+volatile uint32_t period = 0;
+volatile float speed = 0;
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+ 8000fc8:	b580      	push	{r7, lr}
+ 8000fca:	b082      	sub	sp, #8
+ 8000fcc:	af00      	add	r7, sp, #0
+ 8000fce:	4603      	mov	r3, r0
+ 8000fd0:	80fb      	strh	r3, [r7, #6]
+	if(GPIO_Pin == HALL_SENSOR_Pin) {
+ 8000fd2:	88fb      	ldrh	r3, [r7, #6]
+ 8000fd4:	f5b3 5f00 	cmp.w	r3, #8192	; 0x2000
+ 8000fd8:	d113      	bne.n	8001002 <HAL_GPIO_EXTI_Callback+0x3a>
+		//Zapisz aktualny czas
+		current_time = HAL_GetTick();
+ 8000fda:	f000 fc0f 	bl	80017fc <HAL_GetTick>
+ 8000fde:	4603      	mov	r3, r0
+ 8000fe0:	4a0a      	ldr	r2, [pc, #40]	; (800100c <HAL_GPIO_EXTI_Callback+0x44>)
+ 8000fe2:	6013      	str	r3, [r2, #0]
+		//Oblicz czas pomiędzy wykryciami magnesu (w ms)
+		period = current_time - old_time;
+ 8000fe4:	4b09      	ldr	r3, [pc, #36]	; (800100c <HAL_GPIO_EXTI_Callback+0x44>)
+ 8000fe6:	681a      	ldr	r2, [r3, #0]
+ 8000fe8:	4b09      	ldr	r3, [pc, #36]	; (8001010 <HAL_GPIO_EXTI_Callback+0x48>)
+ 8000fea:	681b      	ldr	r3, [r3, #0]
+ 8000fec:	1ad3      	subs	r3, r2, r3
+ 8000fee:	4a09      	ldr	r2, [pc, #36]	; (8001014 <HAL_GPIO_EXTI_Callback+0x4c>)
+ 8000ff0:	6013      	str	r3, [r2, #0]
+		old_time = current_time;
+ 8000ff2:	4b06      	ldr	r3, [pc, #24]	; (800100c <HAL_GPIO_EXTI_Callback+0x44>)
+ 8000ff4:	681b      	ldr	r3, [r3, #0]
+ 8000ff6:	4a06      	ldr	r2, [pc, #24]	; (8001010 <HAL_GPIO_EXTI_Callback+0x48>)
+ 8000ff8:	6013      	str	r3, [r2, #0]
+		__HAL_TIM_SET_COUNTER(&htim6, 0);
+ 8000ffa:	4b07      	ldr	r3, [pc, #28]	; (8001018 <HAL_GPIO_EXTI_Callback+0x50>)
+ 8000ffc:	681b      	ldr	r3, [r3, #0]
+ 8000ffe:	2200      	movs	r2, #0
+ 8001000:	625a      	str	r2, [r3, #36]	; 0x24
+	}
+}
+ 8001002:	bf00      	nop
+ 8001004:	3708      	adds	r7, #8
+ 8001006:	46bd      	mov	sp, r7
+ 8001008:	bd80      	pop	{r7, pc}
+ 800100a:	bf00      	nop
+ 800100c:	200001f4 	.word	0x200001f4
+ 8001010:	200001f0 	.word	0x200001f0
+ 8001014:	200001f8 	.word	0x200001f8
+ 8001018:	20000204 	.word	0x20000204
+
+0800101c <HAL_TIM_PeriodElapsedCallback>:
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+ 800101c:	b480      	push	{r7}
+ 800101e:	b083      	sub	sp, #12
+ 8001020:	af00      	add	r7, sp, #0
+ 8001022:	6078      	str	r0, [r7, #4]
+	if(htim == &htim6) {
+ 8001024:	687b      	ldr	r3, [r7, #4]
+ 8001026:	4a09      	ldr	r2, [pc, #36]	; (800104c <HAL_TIM_PeriodElapsedCallback+0x30>)
+ 8001028:	4293      	cmp	r3, r2
+ 800102a:	d108      	bne.n	800103e <HAL_TIM_PeriodElapsedCallback+0x22>
+		//Wyzeruj predkosc
+		current_time = 0;
+ 800102c:	4b08      	ldr	r3, [pc, #32]	; (8001050 <HAL_TIM_PeriodElapsedCallback+0x34>)
+ 800102e:	2200      	movs	r2, #0
+ 8001030:	601a      	str	r2, [r3, #0]
+		old_time = 0;
+ 8001032:	4b08      	ldr	r3, [pc, #32]	; (8001054 <HAL_TIM_PeriodElapsedCallback+0x38>)
+ 8001034:	2200      	movs	r2, #0
+ 8001036:	601a      	str	r2, [r3, #0]
+		period = 0;
+ 8001038:	4b07      	ldr	r3, [pc, #28]	; (8001058 <HAL_TIM_PeriodElapsedCallback+0x3c>)
+ 800103a:	2200      	movs	r2, #0
+ 800103c:	601a      	str	r2, [r3, #0]
+	}
+}
+ 800103e:	bf00      	nop
+ 8001040:	370c      	adds	r7, #12
+ 8001042:	46bd      	mov	sp, r7
+ 8001044:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8001048:	4770      	bx	lr
+ 800104a:	bf00      	nop
+ 800104c:	20000204 	.word	0x20000204
+ 8001050:	200001f4 	.word	0x200001f4
+ 8001054:	200001f0 	.word	0x200001f0
+ 8001058:	200001f8 	.word	0x200001f8
+ 800105c:	00000000 	.word	0x00000000
+
+08001060 <speedValue>:
+
+uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch)
+{
+ 8001060:	b5b0      	push	{r4, r5, r7, lr}
+ 8001062:	b086      	sub	sp, #24
+ 8001064:	af00      	add	r7, sp, #0
+ 8001066:	6078      	str	r0, [r7, #4]
+ 8001068:	460b      	mov	r3, r1
+ 800106a:	70fb      	strb	r3, [r7, #3]
+	float wheelSize_m = (float)wheelSize_inch * 0.0254;
+ 800106c:	78fb      	ldrb	r3, [r7, #3]
+ 800106e:	ee07 3a90 	vmov	s15, r3
+ 8001072:	eef8 7a67 	vcvt.f32.u32	s15, s15
+ 8001076:	ee17 0a90 	vmov	r0, s15
+ 800107a:	f7ff fa65 	bl	8000548 <__aeabi_f2d>
+ 800107e:	a32f      	add	r3, pc, #188	; (adr r3, 800113c <speedValue+0xdc>)
+ 8001080:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001084:	f7ff fab8 	bl	80005f8 <__aeabi_dmul>
+ 8001088:	4602      	mov	r2, r0
+ 800108a:	460b      	mov	r3, r1
+ 800108c:	4610      	mov	r0, r2
+ 800108e:	4619      	mov	r1, r3
+ 8001090:	f7ff fd8a 	bl	8000ba8 <__aeabi_d2f>
+ 8001094:	4603      	mov	r3, r0
+ 8001096:	617b      	str	r3, [r7, #20]
+	float radius_m = wheelSize_m / 2;
+ 8001098:	ed97 7a05 	vldr	s14, [r7, #20]
+ 800109c:	eef0 6a00 	vmov.f32	s13, #0	; 0x40000000  2.0
+ 80010a0:	eec7 7a26 	vdiv.f32	s15, s14, s13
+ 80010a4:	edc7 7a04 	vstr	s15, [r7, #16]
+	float period_s = 0.001 * (float)period;
+ 80010a8:	687b      	ldr	r3, [r7, #4]
+ 80010aa:	ee07 3a90 	vmov	s15, r3
+ 80010ae:	eef8 7a67 	vcvt.f32.u32	s15, s15
+ 80010b2:	ee17 0a90 	vmov	r0, s15
+ 80010b6:	f7ff fa47 	bl	8000548 <__aeabi_f2d>
+ 80010ba:	a322      	add	r3, pc, #136	; (adr r3, 8001144 <speedValue+0xe4>)
+ 80010bc:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80010c0:	f7ff fa9a 	bl	80005f8 <__aeabi_dmul>
+ 80010c4:	4602      	mov	r2, r0
+ 80010c6:	460b      	mov	r3, r1
+ 80010c8:	4610      	mov	r0, r2
+ 80010ca:	4619      	mov	r1, r3
+ 80010cc:	f7ff fd6c 	bl	8000ba8 <__aeabi_d2f>
+ 80010d0:	4603      	mov	r3, r0
+ 80010d2:	60fb      	str	r3, [r7, #12]
+
+	if(period > 0)
+ 80010d4:	687b      	ldr	r3, [r7, #4]
+ 80010d6:	2b00      	cmp	r3, #0
+ 80010d8:	d01e      	beq.n	8001118 <speedValue+0xb8>
+	speed = (2.0*3.14*radius_m)/period_s;
+ 80010da:	6938      	ldr	r0, [r7, #16]
+ 80010dc:	f7ff fa34 	bl	8000548 <__aeabi_f2d>
+ 80010e0:	a31a      	add	r3, pc, #104	; (adr r3, 800114c <speedValue+0xec>)
+ 80010e2:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 80010e6:	f7ff fa87 	bl	80005f8 <__aeabi_dmul>
+ 80010ea:	4602      	mov	r2, r0
+ 80010ec:	460b      	mov	r3, r1
+ 80010ee:	4614      	mov	r4, r2
+ 80010f0:	461d      	mov	r5, r3
+ 80010f2:	68f8      	ldr	r0, [r7, #12]
+ 80010f4:	f7ff fa28 	bl	8000548 <__aeabi_f2d>
+ 80010f8:	4602      	mov	r2, r0
+ 80010fa:	460b      	mov	r3, r1
+ 80010fc:	4620      	mov	r0, r4
+ 80010fe:	4629      	mov	r1, r5
+ 8001100:	f7ff fba4 	bl	800084c <__aeabi_ddiv>
+ 8001104:	4602      	mov	r2, r0
+ 8001106:	460b      	mov	r3, r1
+ 8001108:	4610      	mov	r0, r2
+ 800110a:	4619      	mov	r1, r3
+ 800110c:	f7ff fd4c 	bl	8000ba8 <__aeabi_d2f>
+ 8001110:	4603      	mov	r3, r0
+ 8001112:	4a09      	ldr	r2, [pc, #36]	; (8001138 <speedValue+0xd8>)
+ 8001114:	6013      	str	r3, [r2, #0]
+ 8001116:	e003      	b.n	8001120 <speedValue+0xc0>
+	else speed = 0;
+ 8001118:	4b07      	ldr	r3, [pc, #28]	; (8001138 <speedValue+0xd8>)
+ 800111a:	f04f 0200 	mov.w	r2, #0
+ 800111e:	601a      	str	r2, [r3, #0]
+
+	return speed;
+ 8001120:	4b05      	ldr	r3, [pc, #20]	; (8001138 <speedValue+0xd8>)
+ 8001122:	edd3 7a00 	vldr	s15, [r3]
+ 8001126:	eefc 7ae7 	vcvt.u32.f32	s15, s15
+ 800112a:	ee17 3a90 	vmov	r3, s15
+}
+ 800112e:	4618      	mov	r0, r3
+ 8001130:	3718      	adds	r7, #24
+ 8001132:	46bd      	mov	sp, r7
+ 8001134:	bdb0      	pop	{r4, r5, r7, pc}
+ 8001136:	bf00      	nop
+ 8001138:	200001fc 	.word	0x200001fc
+ 800113c:	25460aa6 	.word	0x25460aa6
+ 8001140:	3f9a0275 	.word	0x3f9a0275
+ 8001144:	d2f1a9fc 	.word	0xd2f1a9fc
+ 8001148:	3f50624d 	.word	0x3f50624d
+ 800114c:	51eb851f 	.word	0x51eb851f
+ 8001150:	40191eb8 	.word	0x40191eb8
+
+08001154 <__io_putchar>:
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
 int __io_putchar(int ch)
 {
- 8000fc8:	b580      	push	{r7, lr}
- 8000fca:	b082      	sub	sp, #8
- 8000fcc:	af00      	add	r7, sp, #0
- 8000fce:	6078      	str	r0, [r7, #4]
+ 8001154:	b580      	push	{r7, lr}
+ 8001156:	b082      	sub	sp, #8
+ 8001158:	af00      	add	r7, sp, #0
+ 800115a:	6078      	str	r0, [r7, #4]
 	if(ch == '\n') {
- 8000fd0:	687b      	ldr	r3, [r7, #4]
- 8000fd2:	2b0a      	cmp	r3, #10
- 8000fd4:	d102      	bne.n	8000fdc <__io_putchar+0x14>
+ 800115c:	687b      	ldr	r3, [r7, #4]
+ 800115e:	2b0a      	cmp	r3, #10
+ 8001160:	d102      	bne.n	8001168 <__io_putchar+0x14>
 		__io_putchar('\r');
- 8000fd6:	200d      	movs	r0, #13
- 8000fd8:	f7ff fff6 	bl	8000fc8 <__io_putchar>
+ 8001162:	200d      	movs	r0, #13
+ 8001164:	f7ff fff6 	bl	8001154 <__io_putchar>
 	}
 
 	HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
- 8000fdc:	1d39      	adds	r1, r7, #4
- 8000fde:	f04f 33ff 	mov.w	r3, #4294967295
- 8000fe2:	2201      	movs	r2, #1
- 8000fe4:	4803      	ldr	r0, [pc, #12]	; (8000ff4 <__io_putchar+0x2c>)
- 8000fe6:	f002 fd89 	bl	8003afc <HAL_UART_Transmit>
+ 8001168:	1d39      	adds	r1, r7, #4
+ 800116a:	f04f 33ff 	mov.w	r3, #4294967295
+ 800116e:	2201      	movs	r2, #1
+ 8001170:	4803      	ldr	r0, [pc, #12]	; (8001180 <__io_putchar+0x2c>)
+ 8001172:	f002 fcc3 	bl	8003afc <HAL_UART_Transmit>
 
 	return 1;
- 8000fea:	2301      	movs	r3, #1
+ 8001176:	2301      	movs	r3, #1
 }
- 8000fec:	4618      	mov	r0, r3
- 8000fee:	3708      	adds	r7, #8
- 8000ff0:	46bd      	mov	sp, r7
- 8000ff2:	bd80      	pop	{r7, pc}
- 8000ff4:	20000250 	.word	0x20000250
-
-08000ff8 <HAL_GPIO_EXTI_Callback>:
-volatile uint32_t current_time;
-volatile uint32_t period;
-volatile float speed;
-
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
- 8000ff8:	b580      	push	{r7, lr}
- 8000ffa:	b082      	sub	sp, #8
- 8000ffc:	af00      	add	r7, sp, #0
- 8000ffe:	4603      	mov	r3, r0
- 8001000:	80fb      	strh	r3, [r7, #6]
-	if(GPIO_Pin == HALL_SENSOR_Pin) {
- 8001002:	88fb      	ldrh	r3, [r7, #6]
- 8001004:	f5b3 5f00 	cmp.w	r3, #8192	; 0x2000
- 8001008:	d113      	bne.n	8001032 <HAL_GPIO_EXTI_Callback+0x3a>
-		//Zapisz aktualny czas
-		current_time = HAL_GetTick();
- 800100a:	f000 fbf7 	bl	80017fc <HAL_GetTick>
- 800100e:	4603      	mov	r3, r0
- 8001010:	4a0a      	ldr	r2, [pc, #40]	; (800103c <HAL_GPIO_EXTI_Callback+0x44>)
- 8001012:	6013      	str	r3, [r2, #0]
-		//Oblicz czas pomiędzy wykryciami magnesu (w ms)
-		period = current_time - old_time;
- 8001014:	4b09      	ldr	r3, [pc, #36]	; (800103c <HAL_GPIO_EXTI_Callback+0x44>)
- 8001016:	681a      	ldr	r2, [r3, #0]
- 8001018:	4b09      	ldr	r3, [pc, #36]	; (8001040 <HAL_GPIO_EXTI_Callback+0x48>)
- 800101a:	681b      	ldr	r3, [r3, #0]
- 800101c:	1ad3      	subs	r3, r2, r3
- 800101e:	4a09      	ldr	r2, [pc, #36]	; (8001044 <HAL_GPIO_EXTI_Callback+0x4c>)
- 8001020:	6013      	str	r3, [r2, #0]
-		old_time = current_time;
- 8001022:	4b06      	ldr	r3, [pc, #24]	; (800103c <HAL_GPIO_EXTI_Callback+0x44>)
- 8001024:	681b      	ldr	r3, [r3, #0]
- 8001026:	4a06      	ldr	r2, [pc, #24]	; (8001040 <HAL_GPIO_EXTI_Callback+0x48>)
- 8001028:	6013      	str	r3, [r2, #0]
-		__HAL_TIM_SET_COUNTER(&htim6, 0);
- 800102a:	4b07      	ldr	r3, [pc, #28]	; (8001048 <HAL_GPIO_EXTI_Callback+0x50>)
- 800102c:	681b      	ldr	r3, [r3, #0]
- 800102e:	2200      	movs	r2, #0
- 8001030:	625a      	str	r2, [r3, #36]	; 0x24
-	}
-}
- 8001032:	bf00      	nop
- 8001034:	3708      	adds	r7, #8
- 8001036:	46bd      	mov	sp, r7
- 8001038:	bd80      	pop	{r7, pc}
- 800103a:	bf00      	nop
- 800103c:	200001f4 	.word	0x200001f4
- 8001040:	200001f0 	.word	0x200001f0
- 8001044:	200001f8 	.word	0x200001f8
- 8001048:	20000204 	.word	0x20000204
-
-0800104c <HAL_TIM_PeriodElapsedCallback>:
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
- 800104c:	b480      	push	{r7}
- 800104e:	b083      	sub	sp, #12
- 8001050:	af00      	add	r7, sp, #0
- 8001052:	6078      	str	r0, [r7, #4]
-	if(htim == &htim6) {
- 8001054:	687b      	ldr	r3, [r7, #4]
- 8001056:	4a09      	ldr	r2, [pc, #36]	; (800107c <HAL_TIM_PeriodElapsedCallback+0x30>)
- 8001058:	4293      	cmp	r3, r2
- 800105a:	d108      	bne.n	800106e <HAL_TIM_PeriodElapsedCallback+0x22>
-		//Wyzeruj predkosc
-		current_time = 0;
- 800105c:	4b08      	ldr	r3, [pc, #32]	; (8001080 <HAL_TIM_PeriodElapsedCallback+0x34>)
- 800105e:	2200      	movs	r2, #0
- 8001060:	601a      	str	r2, [r3, #0]
-		old_time = 0;
- 8001062:	4b08      	ldr	r3, [pc, #32]	; (8001084 <HAL_TIM_PeriodElapsedCallback+0x38>)
- 8001064:	2200      	movs	r2, #0
- 8001066:	601a      	str	r2, [r3, #0]
-		period = 0;
- 8001068:	4b07      	ldr	r3, [pc, #28]	; (8001088 <HAL_TIM_PeriodElapsedCallback+0x3c>)
- 800106a:	2200      	movs	r2, #0
- 800106c:	601a      	str	r2, [r3, #0]
-	}
-}
- 800106e:	bf00      	nop
- 8001070:	370c      	adds	r7, #12
- 8001072:	46bd      	mov	sp, r7
- 8001074:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8001078:	4770      	bx	lr
- 800107a:	bf00      	nop
- 800107c:	20000204 	.word	0x20000204
- 8001080:	200001f4 	.word	0x200001f4
- 8001084:	200001f0 	.word	0x200001f0
- 8001088:	200001f8 	.word	0x200001f8
- 800108c:	00000000 	.word	0x00000000
-
-08001090 <speedValue>:
-
-uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch)
-{
- 8001090:	b5b0      	push	{r4, r5, r7, lr}
- 8001092:	b086      	sub	sp, #24
- 8001094:	af00      	add	r7, sp, #0
- 8001096:	6078      	str	r0, [r7, #4]
- 8001098:	460b      	mov	r3, r1
- 800109a:	70fb      	strb	r3, [r7, #3]
-	float wheelSize_m = (float)wheelSize_inch * 0.0254;
- 800109c:	78fb      	ldrb	r3, [r7, #3]
- 800109e:	ee07 3a90 	vmov	s15, r3
- 80010a2:	eef8 7a67 	vcvt.f32.u32	s15, s15
- 80010a6:	ee17 0a90 	vmov	r0, s15
- 80010aa:	f7ff fa4d 	bl	8000548 <__aeabi_f2d>
- 80010ae:	a32f      	add	r3, pc, #188	; (adr r3, 800116c <speedValue+0xdc>)
- 80010b0:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80010b4:	f7ff faa0 	bl	80005f8 <__aeabi_dmul>
- 80010b8:	4602      	mov	r2, r0
- 80010ba:	460b      	mov	r3, r1
- 80010bc:	4610      	mov	r0, r2
- 80010be:	4619      	mov	r1, r3
- 80010c0:	f7ff fd72 	bl	8000ba8 <__aeabi_d2f>
- 80010c4:	4603      	mov	r3, r0
- 80010c6:	617b      	str	r3, [r7, #20]
-	float radius_m = wheelSize_m / 2;
- 80010c8:	ed97 7a05 	vldr	s14, [r7, #20]
- 80010cc:	eef0 6a00 	vmov.f32	s13, #0	; 0x40000000  2.0
- 80010d0:	eec7 7a26 	vdiv.f32	s15, s14, s13
- 80010d4:	edc7 7a04 	vstr	s15, [r7, #16]
-	float period_s = 0.001 * (float)period;
- 80010d8:	687b      	ldr	r3, [r7, #4]
- 80010da:	ee07 3a90 	vmov	s15, r3
- 80010de:	eef8 7a67 	vcvt.f32.u32	s15, s15
- 80010e2:	ee17 0a90 	vmov	r0, s15
- 80010e6:	f7ff fa2f 	bl	8000548 <__aeabi_f2d>
- 80010ea:	a322      	add	r3, pc, #136	; (adr r3, 8001174 <speedValue+0xe4>)
- 80010ec:	e9d3 2300 	ldrd	r2, r3, [r3]
- 80010f0:	f7ff fa82 	bl	80005f8 <__aeabi_dmul>
- 80010f4:	4602      	mov	r2, r0
- 80010f6:	460b      	mov	r3, r1
- 80010f8:	4610      	mov	r0, r2
- 80010fa:	4619      	mov	r1, r3
- 80010fc:	f7ff fd54 	bl	8000ba8 <__aeabi_d2f>
- 8001100:	4603      	mov	r3, r0
- 8001102:	60fb      	str	r3, [r7, #12]
-
-	if(period > 0)
- 8001104:	687b      	ldr	r3, [r7, #4]
- 8001106:	2b00      	cmp	r3, #0
- 8001108:	d01e      	beq.n	8001148 <speedValue+0xb8>
-	speed = (2.0*3.14*radius_m)/period_s;
- 800110a:	6938      	ldr	r0, [r7, #16]
- 800110c:	f7ff fa1c 	bl	8000548 <__aeabi_f2d>
- 8001110:	a31a      	add	r3, pc, #104	; (adr r3, 800117c <speedValue+0xec>)
- 8001112:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001116:	f7ff fa6f 	bl	80005f8 <__aeabi_dmul>
- 800111a:	4602      	mov	r2, r0
- 800111c:	460b      	mov	r3, r1
- 800111e:	4614      	mov	r4, r2
- 8001120:	461d      	mov	r5, r3
- 8001122:	68f8      	ldr	r0, [r7, #12]
- 8001124:	f7ff fa10 	bl	8000548 <__aeabi_f2d>
- 8001128:	4602      	mov	r2, r0
- 800112a:	460b      	mov	r3, r1
- 800112c:	4620      	mov	r0, r4
- 800112e:	4629      	mov	r1, r5
- 8001130:	f7ff fb8c 	bl	800084c <__aeabi_ddiv>
- 8001134:	4602      	mov	r2, r0
- 8001136:	460b      	mov	r3, r1
- 8001138:	4610      	mov	r0, r2
- 800113a:	4619      	mov	r1, r3
- 800113c:	f7ff fd34 	bl	8000ba8 <__aeabi_d2f>
- 8001140:	4603      	mov	r3, r0
- 8001142:	4a09      	ldr	r2, [pc, #36]	; (8001168 <speedValue+0xd8>)
- 8001144:	6013      	str	r3, [r2, #0]
- 8001146:	e003      	b.n	8001150 <speedValue+0xc0>
-	else speed = 0;
- 8001148:	4b07      	ldr	r3, [pc, #28]	; (8001168 <speedValue+0xd8>)
- 800114a:	f04f 0200 	mov.w	r2, #0
- 800114e:	601a      	str	r2, [r3, #0]
-
-	return speed;
- 8001150:	4b05      	ldr	r3, [pc, #20]	; (8001168 <speedValue+0xd8>)
- 8001152:	edd3 7a00 	vldr	s15, [r3]
- 8001156:	eefc 7ae7 	vcvt.u32.f32	s15, s15
- 800115a:	ee17 3a90 	vmov	r3, s15
-}
- 800115e:	4618      	mov	r0, r3
- 8001160:	3718      	adds	r7, #24
- 8001162:	46bd      	mov	sp, r7
- 8001164:	bdb0      	pop	{r4, r5, r7, pc}
- 8001166:	bf00      	nop
- 8001168:	200001fc 	.word	0x200001fc
- 800116c:	25460aa6 	.word	0x25460aa6
- 8001170:	3f9a0275 	.word	0x3f9a0275
- 8001174:	d2f1a9fc 	.word	0xd2f1a9fc
- 8001178:	3f50624d 	.word	0x3f50624d
- 800117c:	51eb851f 	.word	0x51eb851f
- 8001180:	40191eb8 	.word	0x40191eb8
+ 8001178:	4618      	mov	r0, r3
+ 800117a:	3708      	adds	r7, #8
+ 800117c:	46bd      	mov	sp, r7
+ 800117e:	bd80      	pop	{r7, pc}
+ 8001180:	20000250 	.word	0x20000250
 
 08001184 <main>:
 /**
@@ -1615,7 +1615,7 @@ int main(void)
  80011a4:	681b      	ldr	r3, [r3, #0]
  80011a6:	210a      	movs	r1, #10
  80011a8:	4618      	mov	r0, r3
- 80011aa:	f7ff ff71 	bl	8001090 <speedValue>
+ 80011aa:	f7ff ff59 	bl	8001060 <speedValue>
  80011ae:	ee07 0a90 	vmov	s15, r0
  80011b2:	eef8 7a67 	vcvt.f32.u32	s15, s15
  80011b6:	4b09      	ldr	r3, [pc, #36]	; (80011dc <main+0x58>)
@@ -2163,7 +2163,7 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
  80013e8:	60ba      	str	r2, [r7, #8]
  80013ea:	781b      	ldrb	r3, [r3, #0]
  80013ec:	4618      	mov	r0, r3
- 80013ee:	f7ff fdeb 	bl	8000fc8 <__io_putchar>
+ 80013ee:	f7ff feb1 	bl	8001154 <__io_putchar>
   for (DataIdx = 0; DataIdx < len; DataIdx++)
  80013f2:	697b      	ldr	r3, [r7, #20]
  80013f4:	3301      	adds	r3, #1
@@ -3931,7 +3931,7 @@ void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
     HAL_GPIO_EXTI_Callback(GPIO_Pin);
  8001da8:	88fb      	ldrh	r3, [r7, #6]
  8001daa:	4618      	mov	r0, r3
- 8001dac:	f7ff f924 	bl	8000ff8 <HAL_GPIO_EXTI_Callback>
+ 8001dac:	f7ff f90c 	bl	8000fc8 <HAL_GPIO_EXTI_Callback>
   }
 }
  8001db0:	bf00      	nop
@@ -8567,7 +8567,7 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
 #else
       HAL_TIM_PeriodElapsedCallback(htim);
  80036f2:	6878      	ldr	r0, [r7, #4]
- 80036f4:	f7fd fcaa 	bl	800104c <HAL_TIM_PeriodElapsedCallback>
+ 80036f4:	f7fd fc92 	bl	800101c <HAL_TIM_PeriodElapsedCallback>
 #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
     }
   }

@@ -435,3 +435,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\domin\OneDriv
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-05-17 12:02:31.025
 !MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-17 12:14:48.012
+!MESSAGE Indexed 'cyclingSpeedometer' (28 sources, 124 headers) in 3.54 sec: 13,309 declarations; 73,940 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.2%)

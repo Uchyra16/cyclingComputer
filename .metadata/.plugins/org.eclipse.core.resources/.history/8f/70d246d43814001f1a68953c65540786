@@ -1,0 +1,20 @@
+#pragma once
+
+#include "tim.h"
+
+extern uint32_t old_time;
+extern uint32_t current_time;
+extern uint32_t period;
+extern float speed;
+
+//Przerwanie odpowiedzialne za:
+//obliczenia okresu pomiędzy dwoma wykryciami czujnika HALLA
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
+
+//Przerwania od timera odpowiedzialne za resetowanie prędkośći
+//W przypadku gdy czujnik nie zostanie wykryty przez 5 sekund
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+
+//Funkcja obliczajaca predkosc na podstawie:
+//Promieniu koła, okresu
+uint32_t speedValue(uint32_t period, uint8_t wheelSize_inch);
