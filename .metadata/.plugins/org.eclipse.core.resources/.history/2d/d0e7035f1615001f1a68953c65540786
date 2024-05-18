@@ -1,0 +1,22 @@
+#pragma once
+
+#include <stdint.h>
+
+//Initialization of the LCD
+void lcd_init(void);
+
+//Mozliwe ze do wyrzucenia
+#define BLACK     0x0000
+#define RED       0xf800
+#define GREEN     0x07e0
+#define BLUE      0x001f
+#define YELLOW    0xffe0
+#define MAGENTA   0xf81f
+#define CYAN      0x07ff
+#define WHITE     0xffff
+
+//Rysowanie prostokatow
+void lcd_fill_box(int x, int y, int width, int height, uint16_t color);
+
+//Pojedyncze piksele
+void lcd_put_pixel(int x, int y, uint16_t color);

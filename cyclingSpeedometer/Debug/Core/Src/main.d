@@ -25,13 +25,24 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/tim.h \
- ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/hall_sensor.h \
- ../Core/Inc/tim.h ../Core/Inc/lps25hb.h
+ ../Core/Inc/dma.h ../Core/Inc/main.h ../Core/Inc/i2c.h ../Core/Inc/spi.h \
+ ../Core/Inc/tim.h ../Core/Inc/usart.h ../Core/Inc/gpio.h \
+ ../Core/Inc/hall_sensor.h ../Core/Inc/tim.h ../Core/Inc/lps25hb.h \
+ ../Core/Inc/lcd.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hagl.h \
+ ../Core/Inc/hagl_hal.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/bitmap.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/bitmap.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/font6x9.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb565.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb888.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hsl.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -59,15 +70,28 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
-../Core/Inc/i2c.h:
+../Core/Inc/dma.h:
 ../Core/Inc/main.h:
+../Core/Inc/i2c.h:
+../Core/Inc/spi.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/gpio.h:
 ../Core/Inc/hall_sensor.h:
 ../Core/Inc/tim.h:
 ../Core/Inc/lps25hb.h:
+../Core/Inc/lcd.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hagl.h:
+../Core/Inc/hagl_hal.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/bitmap.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/bitmap.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/font6x9.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb565.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb888.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hsl.h:

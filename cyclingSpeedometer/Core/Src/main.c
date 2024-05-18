@@ -18,7 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "i2c.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -30,6 +32,12 @@
 #include <math.h>
 #include "hall_sensor.h"
 #include "lps25hb.h"
+#include "lcd.h"
+#include <wchar.h>
+
+#include "hagl.h"
+#include "font6x9.h"
+#include "rgb565.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,6 +67,14 @@ int __io_putchar(int ch)
 	HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
 
 	return 1;
+}
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+	if (hspi == &hspi2)
+		{
+			lcd_transfer_done();
+		}
 }
 
 
@@ -107,9 +123,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM6_Init();
   MX_I2C1_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -118,10 +136,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   HAL_TIM_Base_Start_IT(&htim6);
   lps25hb_init();
+  lcd_init();
 
   float p0 = lps25hb_read_pressure();
 
-  HAL_Delay(5000);
+
+
+
 
   while (1)
   {
@@ -129,13 +150,28 @@ int main(void)
 	float p = lps25hb_read_pressure();
 	float h = -29.271769 * temp * log(p / p0);
 	float temperature_C = lps25hb_read_temp();
-
-	printf("T = %.1f *C\n", temperature_C);
-	printf("h = %.2f m\n", h);
-	HAL_Delay(1000);
-	printf("p = %.1f\n", p);
+//
+//	printf("T = %.1f *C\n", temperature_C);
+//	printf("h = %.2f m\n", h);
+//	HAL_Delay(1000);
+//	printf("p = %.1f\n", p);
 	speed = speedValue(period, 2);
-//	printf("Speed = %.2f km/h \n", speed);
+	printf("Speed = %.2f km/h \n", speed);
+	hagl_clear_screen();
+	 wchar_t speed_display[16];
+	 wchar_t h_display[16];
+	 wchar_t temperature_display[16];
+
+
+
+	 swprintf(temperature_display,16,L"%1.f *C", temperature_C);
+	 swprintf(h_display,16, L"%.2f m", h);
+	 swprintf(speed_display,16, L"%.2f km/h", speed);
+	 hagl_put_text(speed_display,40,55,YELLOW,font6x9);
+	 hagl_put_text(temperature_display, 40, 75, YELLOW, font6x9);
+	 hagl_put_text(h_display, 40, 85, YELLOW, font6x9);
+
+	 lcd_copy();
 
 
 
