@@ -1,0 +1,228 @@
+2024-05-18 14:13:51,579 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-18 14:13:51,748 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-18 14:15:07,014 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-18 14:16:42,633 [INFO] Gpio:277 - dependency for GPIO [I2C1, SPI2, SYS, USART2]
+2024-05-18 14:17:04,889 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 834709592 Bytes (1073741824)
+2024-05-18 14:17:05,811 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 887138160 Bytes (1073741824)
+2024-05-18 14:17:07,166 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 990421080 Bytes (1073741824)
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7L4
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-18 14:17:07,490 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-18 14:17:07,492 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-18 14:17:07,493 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\
+2024-05-18 14:17:07,642 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp_save
+2024-05-18 14:17:07,715 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp
+2024-05-18 14:17:07,806 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c_save
+2024-05-18 14:17:07,886 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c
+2024-05-18 14:17:07,897 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h_save
+2024-05-18 14:17:07,984 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h
+2024-05-18 14:17:08,242 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c_save
+2024-05-18 14:17:08,342 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c
+2024-05-18 14:17:08,349 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h_save
+2024-05-18 14:17:08,421 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h
+2024-05-18 14:17:08,435 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c_save
+2024-05-18 14:17:08,532 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c
+2024-05-18 14:17:08,536 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h_save
+2024-05-18 14:17:08,588 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h
+2024-05-18 14:17:08,598 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c_save
+2024-05-18 14:17:08,682 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c
+2024-05-18 14:17:08,688 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h_save
+2024-05-18 14:17:08,741 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h
+2024-05-18 14:17:08,757 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c_save
+2024-05-18 14:17:08,846 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c
+2024-05-18 14:17:08,851 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h_save
+2024-05-18 14:17:08,927 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h
+2024-05-18 14:17:08,948 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c_save
+2024-05-18 14:17:09,109 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c
+2024-05-18 14:17:09,115 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h_save
+2024-05-18 14:17:09,170 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h
+2024-05-18 14:17:09,185 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c_save
+2024-05-18 14:17:09,266 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c
+2024-05-18 14:17:09,271 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp_save
+2024-05-18 14:17:09,342 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp
+2024-05-18 14:17:09,351 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h_save
+2024-05-18 14:17:09,426 [INFO] CodeEngine:335 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h
+2024-05-18 14:17:09,451 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h_save
+2024-05-18 14:17:09,522 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h
+2024-05-18 14:17:09,531 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c_save
+2024-05-18 14:17:09,617 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c
+2024-05-18 14:17:10,278 [INFO] ProjectBuilder:3076 - Time for Copy HAL[1] : 211mS.
+2024-05-18 14:17:10,283 [INFO] ProjectBuilder:4485 - Project Generator version: 4.2.0-B44
+2024-05-18 14:17:10,576 [INFO] ConfigFileManager:1495 - The Die is : DIE415
+2024-05-18 14:17:12,112 [INFO] ProjectBuilder:4747 - Time for Generating toolchain IDE Files: 1829mS.
+2024-05-18 14:17:12,113 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 1mS.
+2024-05-18 14:17:12,116 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.
+2024-05-18 14:37:48,859 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 740508592 Bytes (1073741824)
+2024-05-18 14:37:50,266 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 695997832 Bytes (1073741824)
+2024-05-18 14:37:51,475 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 745807240 Bytes (1073741824)
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7L4
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-18 14:37:51,806 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-18 14:37:51,807 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-18 14:37:51,808 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\
+2024-05-18 14:37:51,968 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp_save
+2024-05-18 14:37:52,063 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp
+2024-05-18 14:37:52,096 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c_save
+2024-05-18 14:37:52,161 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c
+2024-05-18 14:37:52,167 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h_save
+2024-05-18 14:37:52,223 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h
+2024-05-18 14:37:52,446 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c_save
+2024-05-18 14:37:52,553 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c
+2024-05-18 14:37:52,560 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h_save
+2024-05-18 14:37:52,628 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h
+2024-05-18 14:37:52,640 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c_save
+2024-05-18 14:37:52,735 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c
+2024-05-18 14:37:52,741 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h_save
+2024-05-18 14:37:52,800 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h
+2024-05-18 14:37:52,811 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c_save
+2024-05-18 14:37:52,903 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c
+2024-05-18 14:37:52,909 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h_save
+2024-05-18 14:37:52,989 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h
+2024-05-18 14:37:52,998 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c_save
+2024-05-18 14:37:53,092 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c
+2024-05-18 14:37:53,097 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h_save
+2024-05-18 14:37:53,151 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h
+2024-05-18 14:37:53,165 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c_save
+2024-05-18 14:37:53,297 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c
+2024-05-18 14:37:53,302 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h_save
+2024-05-18 14:37:53,357 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h
+2024-05-18 14:37:53,368 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c_save
+2024-05-18 14:37:53,442 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c
+2024-05-18 14:37:53,445 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp_save
+2024-05-18 14:37:53,498 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp
+2024-05-18 14:37:53,507 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h_save
+2024-05-18 14:37:53,573 [INFO] CodeEngine:335 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h
+2024-05-18 14:37:53,600 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h_save
+2024-05-18 14:37:53,675 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h
+2024-05-18 14:37:53,681 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c_save
+2024-05-18 14:37:53,765 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c
+2024-05-18 14:37:54,267 [INFO] ProjectBuilder:3076 - Time for Copy HAL[1] : 165mS.
+2024-05-18 14:37:54,271 [INFO] ProjectBuilder:4485 - Project Generator version: 4.2.0-B44
+2024-05-18 14:37:54,602 [INFO] ConfigFileManager:1495 - The Die is : DIE415
+2024-05-18 14:37:56,047 [INFO] ProjectBuilder:4747 - Time for Generating toolchain IDE Files: 1775mS.
+2024-05-18 14:37:56,047 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.
+2024-05-18 14:37:56,061 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.
+2024-05-18 15:18:29,527 [INFO] Gpio:277 - dependency for GPIO [I2C1, SPI2, SYS, USART2]
+2024-05-18 15:18:29,643 [INFO] I2cTimingTraitement:330 - 0x10909CEC
+2024-05-18 15:18:37,851 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 717916256 Bytes (1073741824)
+2024-05-18 15:18:38,741 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 748851296 Bytes (1073741824)
+2024-05-18 15:18:39,833 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 864194656 Bytes (1073741824)
+2024-05-18 15:18:40,261 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2024-05-18 15:18:40,262 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7L4
+2024-05-18 15:18:40,262 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-18 15:18:40,262 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-18 15:18:40,262 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-18 15:18:40,262 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-18 15:18:40,263 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-18 15:18:40,263 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-18 15:18:40,264 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\
+2024-05-18 15:18:40,464 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp_save
+2024-05-18 15:18:40,613 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp
+2024-05-18 15:18:40,652 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c_save
+2024-05-18 15:18:40,761 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c
+2024-05-18 15:18:40,766 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h_save
+2024-05-18 15:18:40,835 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h
+2024-05-18 15:18:41,096 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c_save
+2024-05-18 15:18:41,216 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c
+2024-05-18 15:18:41,223 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h_save
+2024-05-18 15:18:41,282 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h
+2024-05-18 15:18:41,294 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c_save
+2024-05-18 15:18:41,391 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c
+2024-05-18 15:18:41,396 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h_save
+2024-05-18 15:18:41,477 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h
+2024-05-18 15:18:41,488 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c_save
+2024-05-18 15:18:41,568 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c
+2024-05-18 15:18:41,573 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h_save
+2024-05-18 15:18:41,630 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h
+2024-05-18 15:18:41,640 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c_save
+2024-05-18 15:18:41,718 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c
+2024-05-18 15:18:41,723 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h_save
+2024-05-18 15:18:41,781 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h
+2024-05-18 15:18:41,794 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c_save
+2024-05-18 15:18:41,928 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c
+2024-05-18 15:18:41,932 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h_save
+2024-05-18 15:18:41,998 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h
+2024-05-18 15:18:42,012 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c_save
+2024-05-18 15:18:42,111 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c
+2024-05-18 15:18:42,115 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp_save
+2024-05-18 15:18:42,174 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp
+2024-05-18 15:18:42,183 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h_save
+2024-05-18 15:18:42,261 [INFO] CodeEngine:335 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h
+2024-05-18 15:18:42,296 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h_save
+2024-05-18 15:18:42,368 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h
+2024-05-18 15:18:42,379 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c_save
+2024-05-18 15:18:42,502 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c
+2024-05-18 15:18:43,051 [INFO] ProjectBuilder:3076 - Time for Copy HAL[1] : 203mS.
+2024-05-18 15:18:43,057 [INFO] ProjectBuilder:4485 - Project Generator version: 4.2.0-B44
+2024-05-18 15:18:43,358 [INFO] ConfigFileManager:1495 - The Die is : DIE415
+2024-05-18 15:18:45,042 [INFO] ProjectBuilder:4747 - Time for Generating toolchain IDE Files: 1985mS.
+2024-05-18 15:18:45,044 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.
+2024-05-18 15:18:45,047 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.
+2024-05-18 15:19:42,486 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-05-18 15:20:01,683 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 833649296 Bytes (1073741824)
+2024-05-18 15:20:02,625 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 867598760 Bytes (1073741824)
+2024-05-18 15:20:04,150 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 701183240 Bytes (1073741824)
+2024-05-18 15:20:04,517 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2024-05-18 15:20:04,517 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM6_7L4
+2024-05-18 15:20:04,517 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2024-05-18 15:20:04,518 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-05-18 15:20:04,519 [INFO] CodeGenerator:807 - code generatio: config db path: C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.10.0.202311202037\\db\
+2024-05-18 15:20:04,738 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp_save
+2024-05-18 15:20:04,828 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\license.tmp
+2024-05-18 15:20:04,865 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c_save
+2024-05-18 15:20:04,967 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\gpio.c
+2024-05-18 15:20:04,974 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h_save
+2024-05-18 15:20:05,035 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\gpio.h
+2024-05-18 15:20:05,332 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\dma.c_save
+2024-05-18 15:20:05,405 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\dma.c
+2024-05-18 15:20:05,413 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\dma.h_save
+2024-05-18 15:20:05,478 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\dma.h
+2024-05-18 15:20:05,488 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c_save
+2024-05-18 15:20:05,589 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\i2c.c
+2024-05-18 15:20:05,595 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h_save
+2024-05-18 15:20:05,667 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\i2c.h
+2024-05-18 15:20:05,680 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c_save
+2024-05-18 15:20:05,772 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\spi.c
+2024-05-18 15:20:05,778 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h_save
+2024-05-18 15:20:05,836 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\spi.h
+2024-05-18 15:20:05,849 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c_save
+2024-05-18 15:20:05,935 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\tim.c
+2024-05-18 15:20:05,942 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h_save
+2024-05-18 15:20:05,999 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\tim.h
+2024-05-18 15:20:06,010 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c_save
+2024-05-18 15:20:06,099 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\usart.c
+2024-05-18 15:20:06,104 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h_save
+2024-05-18 15:20:06,185 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\usart.h
+2024-05-18 15:20:06,203 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c_save
+2024-05-18 15:20:06,392 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_it.c
+2024-05-18 15:20:06,399 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h_save
+2024-05-18 15:20:06,471 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_it.h
+2024-05-18 15:20:06,486 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c_save
+2024-05-18 15:20:06,588 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\stm32l4xx_hal_msp.c
+2024-05-18 15:20:06,594 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp_save
+2024-05-18 15:20:06,682 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\MXTmpFiles\system.tmp
+2024-05-18 15:20:06,693 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h_save
+2024-05-18 15:20:06,754 [INFO] CodeEngine:335 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\stm32l4xx_hal_conf.h
+2024-05-18 15:20:06,780 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h_save
+2024-05-18 15:20:06,866 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Inc\main.h
+2024-05-18 15:20:06,870 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c_save
+2024-05-18 15:20:06,964 [INFO] CodeEngine:279 - Generated code: C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\Core\Src\main.c
+2024-05-18 15:20:07,515 [INFO] ProjectBuilder:3076 - Time for Copy HAL[1] : 172mS.
+2024-05-18 15:20:07,519 [INFO] ProjectBuilder:4485 - Project Generator version: 4.2.0-B44
+2024-05-18 15:20:07,846 [INFO] ConfigFileManager:1495 - The Die is : DIE415
+2024-05-18 15:20:09,570 [INFO] ProjectBuilder:4747 - Time for Generating toolchain IDE Files: 2052mS.
+2024-05-18 15:20:09,571 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 1mS.
+2024-05-18 15:20:09,576 [INFO] ProjectBuilder:2947 - Time for Copy CMSIS : 0mS.

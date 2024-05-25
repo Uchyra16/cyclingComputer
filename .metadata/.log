@@ -972,3 +972,46 @@ org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider$CyclicP
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-05-18 17:10:19.845
 !MESSAGE Existing sessions are:
+!SESSION 2024-05-19 16:39:24.268 -----------------------------------------------
+eclipse.buildId=Version 1.14.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Framework arguments:  C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\cyclingSpeedometer\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-05-19 16:39:36.889
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-05-19 16:39:36.895
+!MESSAGE Log4j2 initialized with config file C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-05-19 16:39:53.243
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-19 16:40:09.832
+!MESSAGE Indexed 'cyclingSpeedometer' (44 sources, 163 headers) in 16.2 sec: 16,995 declarations; 97,492 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.15%)
+!SESSION 2024-05-25 17:51:38.767 -----------------------------------------------
+eclipse.buildId=Version 1.14.0
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-05-25 17:51:47.334
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-05-25 17:51:47.334
+!MESSAGE Log4j2 initialized with config file C:\Users\domin\OneDrive\Pulpit\STM32\cyclingSpeedometer\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-05-25 17:51:52.130
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-25 18:46:22.667
+!MESSAGE Indexed 'pointerExercise' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-25 18:47:15.791
+!MESSAGE Indexed 'pointersExercise' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-25 18:47:41.680
+!MESSAGE Indexed 'pexercise' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

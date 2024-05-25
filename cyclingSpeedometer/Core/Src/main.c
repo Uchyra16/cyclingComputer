@@ -38,6 +38,9 @@
 #include "hagl.h"
 #include "font6x9.h"
 #include "rgb565.h"
+#include "font10x20.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -140,10 +143,6 @@ int main(void)
 
   float p0 = lps25hb_read_pressure();
 
-
-
-
-
   while (1)
   {
 	float temp = lps25hb_read_temp() + 273.15;
@@ -158,30 +157,20 @@ int main(void)
 	speed = speedValue(period, 2);
 	printf("Speed = %.2f km/h \n", speed);
 	hagl_clear_screen();
-	 wchar_t speed_display[16];
-	 wchar_t h_display[16];
-	 wchar_t temperature_display[16];
+	wchar_t speed_display[16];
+	wchar_t h_display[16];
+	wchar_t temperature_display[16];
 
 
 
-	 swprintf(temperature_display,16,L"%1.f *C", temperature_C);
-	 swprintf(h_display,16, L"%.2f m", h);
-	 swprintf(speed_display,16, L"%.2f km/h", speed);
-	 hagl_put_text(speed_display,40,55,YELLOW,font6x9);
-	 hagl_put_text(temperature_display, 40, 75, YELLOW, font6x9);
-	 hagl_put_text(h_display, 40, 85, YELLOW, font6x9);
+	swprintf(temperature_display,16,L"%.1f *C", temperature_C);
+	swprintf(h_display,16, L"%.2f m", h);
+	swprintf(speed_display,16, L"%.2f km/h", speed);
+	hagl_put_text(speed_display,40,55,YELLOW, font10x20);
+//	hagl_put_text(temperature_display, 40, 75, YELLOW, font10x20);
+//	hagl_put_text(h_display, 40, 85, YELLOW, font10x20);
 
 	 lcd_copy();
-
-
-
-
-
-
-
-
-
-
 
     /* USER CODE END WHILE */
 

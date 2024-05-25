@@ -42,7 +42,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/font6x9.h \
  C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb565.h \
  C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb888.h \
- C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hsl.h
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hsl.h \
+ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/font10x20.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -95,3 +96,4 @@ C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/
 C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb565.h:
 C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/rgb888.h:
 C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/hsl.h:
+C:/Users/domin/OneDrive/Pulpit/STM32/cyclingSpeedometer/cyclingSpeedometer/hagl/include/font10x20.h:
