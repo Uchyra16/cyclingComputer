@@ -30,15 +30,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <wchar.h>
+
 #include "hall_sensor.h"
 #include "lps25hb.h"
 #include "lcd.h"
-#include <wchar.h>
-
 #include "hagl.h"
-#include "font6x9.h"
-#include "rgb565.h"
-#include "font10x20.h"
+#include "font9x18B-KOI8-R.h"
+
+
 
 
 /* USER CODE END Includes */
@@ -80,11 +80,43 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 		}
 }
 
+volatile uint32_t timer_seconds = 0;
+volatile uint32_t old_time = 0;
+volatile uint32_t current_time = 0;
+volatile uint32_t period = 0;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim == &htim6) {
+		current_time = 0;
+		old_time = 0;
+		period = 0;
+	}
+	if(htim == &htim7){
+			timer_seconds++;
+		}
+}
+volatile uint32_t hallCounter = 0;
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if(GPIO_Pin == HALL_SENSOR_Pin) {
+		//Save time
+		current_time = HAL_GetTick();
+		//Count the period
+		period = current_time - old_time;
+		old_time = current_time;
+		__HAL_TIM_SET_COUNTER(&htim6, 0);
+		hallCounter++;
+	}
+}
 
+void convert_time(uint32_t timer_seconds, uint32_t *hours, uint32_t *minutes, uint32_t *seconds)
+{
+	*seconds = timer_seconds % 60;
+	*minutes = (timer_seconds/60) % 60;
+	*hours = (timer_seconds/3600) % 24;
+}
 
-
-
-
+uint8_t wheelSize = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -131,6 +163,7 @@ int main(void)
   MX_TIM6_Init();
   MX_I2C1_Init();
   MX_SPI2_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -138,39 +171,134 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_TIM_Base_Start_IT(&htim6);
+  HAL_TIM_Base_Start_IT(&htim7);
   lps25hb_init();
   lcd_init();
-
+  //Variables
+  uint8_t counter1 = 0;
+  uint8_t counter2 = 0;
+  uint8_t counter3 = 0;
+  uint8_t whichButton = 0;
+  uint32_t hours,minutes,seconds;
+  float distance = 0;
+  float heightDifference = 0;
+  float h = 0;
   float p0 = lps25hb_read_pressure();
 
   while (1)
   {
+
 	float temp = lps25hb_read_temp() + 273.15;
 	float p = lps25hb_read_pressure();
-	float h = -29.271769 * temp * log(p / p0);
 	float temperature_C = lps25hb_read_temp();
-//
-//	printf("T = %.1f *C\n", temperature_C);
-//	printf("h = %.2f m\n", h);
-//	HAL_Delay(1000);
-//	printf("p = %.1f\n", p);
-	speed = speedValue(period, 2);
-	printf("Speed = %.2f km/h \n", speed);
+	wheelSize = counter3;
+	speed = speedValue(period, wheelSize);
+
+
+	//DISPLAY PART
+
 	hagl_clear_screen();
+
 	wchar_t speed_display[16];
 	wchar_t h_display[16];
 	wchar_t temperature_display[16];
+	wchar_t timer_display[16];
+	wchar_t distance_display[16];
+	wchar_t heightDiff_display[16];
+	wchar_t wheelSize_display[16];
 
-
-
-	swprintf(temperature_display,16,L"%.1f *C", temperature_C);
+	swprintf(heightDiff_display, 16, L"%d m", (uint16_t)heightDifference);
+	swprintf(temperature_display,16,L"%d°C", (uint8_t)temperature_C);
 	swprintf(h_display,16, L"%.2f m", h);
 	swprintf(speed_display,16, L"%.2f km/h", speed);
-	hagl_put_text(speed_display,40,55,YELLOW, font10x20);
-//	hagl_put_text(temperature_display, 40, 75, YELLOW, font10x20);
-//	hagl_put_text(h_display, 40, 85, YELLOW, font10x20);
+	swprintf(timer_display,16, L"%02lu:%02lu:%02lu", hours,minutes,seconds);
+	swprintf(distance_display,16,L"%.2f km",(float)distance);
+	swprintf(wheelSize_display,16,L"%Wheel Size: %d \n  (inch)", wheelSize);
 
-	 lcd_copy();
+
+
+
+	//BUTTON PART
+	 if(HAL_GPIO_ReadPin(L_BUTTON_GPIO_Port, L_BUTTON_Pin) == GPIO_PIN_RESET) {
+		 counter1++;
+		 whichButton = 1;
+		 timer_seconds = 0;
+		 if(counter1 > 4){
+			 counter1 = 0;
+		 }
+		 while(HAL_GPIO_ReadPin(L_BUTTON_GPIO_Port,L_BUTTON_Pin) == GPIO_PIN_RESET);
+	 }
+	 if(HAL_GPIO_ReadPin(M_BUTTON_GPIO_Port, M_BUTTON_Pin) == GPIO_PIN_RESET) {
+		 counter2++;
+		 whichButton = 2;
+		 if(counter2 > 2) {
+			 counter2 = 0;
+		 }
+		 while(HAL_GPIO_ReadPin(M_BUTTON_GPIO_Port,M_BUTTON_Pin) == GPIO_PIN_RESET);
+	 }
+	 if(HAL_GPIO_ReadPin(R_BUTTON_GPIO_Port, R_BUTTON_Pin) == GPIO_PIN_RESET) {
+		 counter3++;
+		 if(counter3 > 30){
+			 counter3 = 0;
+		 }
+		 while(HAL_GPIO_ReadPin(R_BUTTON_GPIO_Port,R_BUTTON_Pin) == GPIO_PIN_RESET);
+	 }
+
+	 //INTERFACE PART
+	 switch(whichButton) {
+	 //1.Trip mode
+	 case 1:
+		 	if(counter1 == 1){
+		 		hagl_put_text(L"   Press again \n  to start trip",0,45,WHITE,font9x18B_KOI8_R);
+		 		lcd_copy();
+		 	}
+		 	else if(counter1 == 2){
+				//TRIP MODE - displaying speed, distance and trip time
+				distance = distanceCovered(hallCounter, 28);
+				convert_time(timer_seconds, &hours, &minutes, &seconds);
+				h = -29.271769 * temp * log(p / p0);
+				heightDifference = heightDiff(h);
+				//Display
+				hagl_put_text(speed_display,40,55,WHITE, font9x18B_KOI8_R);
+				hagl_put_text(distance_display,40,25,WHITE,font9x18B_KOI8_R);
+				hagl_put_text(temperature_display, 0, 0, WHITE, font9x18B_KOI8_R);
+				hagl_put_text(timer_display,40,85,WHITE,font9x18B_KOI8_R);
+				lcd_copy();
+		 	}
+		 	else if(counter1 == 3){
+		 		//TRIP RESULTS MODE - displaying total distance, time and hDiff
+		 		hagl_put_text(L"Trip finished!",0,0,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(L"Dist: ",0,25,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(distance_display,70,25,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(L"Time: ",0,45,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(timer_display,60,45,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(L"H diff: ",0,65,WHITE,font9x18B_KOI8_R);
+		 		hagl_put_text(heightDiff_display, 100,65,WHITE,font9x18B_KOI8_R);
+		 		lcd_copy();
+		 	}
+		 	else if(counter1 == 4) {
+		 		whichButton = 0;
+		 		hallCounter = 0;
+		 	}
+			break;
+	//2. Wheel size config mode
+	 case 2:
+		 	if(counter2 == 1) {
+				hagl_put_text(wheelSize_display, 0,40,WHITE,font9x18B_KOI8_R);
+				hagl_put_text(L"2.Accept",0,60,WHITE,font9x18B_KOI8_R);
+				hagl_put_text(L"3.Change size ",0,80,WHITE,font9x18B_KOI8_R);
+				lcd_copy();
+		 	}
+		 	else if(counter2 == 2) {
+		 		whichButton = 0;
+		 	}
+		 	break;
+	//Default - menu
+	 default:
+		 	hagl_put_text(L"Mode:\n 1.Trip mode\n 2.Wheel size",10,25,WHITE,font9x18B_KOI8_R);
+		 	lcd_copy();
+			break;
+	 }
 
     /* USER CODE END WHILE */
 

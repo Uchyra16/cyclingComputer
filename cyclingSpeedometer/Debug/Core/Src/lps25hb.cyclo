@@ -4,3 +4,4 @@
 ../Core/Src/lps25hb.c:51:7:lps25hb_read_temp	2
 ../Core/Src/lps25hb.c:61:7:lps25hb_read_pressure	2
 ../Core/Src/lps25hb.c:71:6:lps25hb_set_calib	1
+../Core/Src/lps25hb.c:80:7:heightDiff	3

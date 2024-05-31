@@ -15,8 +15,10 @@
 #define CYAN			0xff07
 #define WHITE			0xffff
 
-void lcd_init(void); // LCD Initialization
+// LCD Initialization
+void lcd_init(void);
 void lcd_put_pixel(int x, int y, uint16_t color);
-void lcd_copy(void); // Buffer content upload
+// Buffer content upload
+void lcd_copy(void);
 void lcd_transfer_done(void);
 bool lcd_is_busy(void);

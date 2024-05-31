@@ -1,19 +1,26 @@
 #pragma once
 #include "stm32l4xx.h"
 
-// Inicjalizacja czujnika LPS25HB
-// Obudzenie i automatyczne pomiary
-// return - HAL_OK lub HAL_ERROR
+extern volatile float minimum_h;
+extern volatile float maximum_h;
+
+// LPS25HB Initialization
+// Wake up and auto measurement
+// return - HAL_OK or HAL_ERROR
 HAL_StatusTypeDef lps25hb_init(void);
 
-// Odczyt temperatury
-// return - wynik w stopniach C
+// Read temperature
+// return - temperature in C
 float lps25hb_read_temp(void);
 
-// Odczyt ciśnienia
-// reuturn - wynik w hPa
+// Read pressure
+// reuturn - pressure in hPa
 float lps25hb_read_pressure(void);
 
-// Kalibracja czujnika ciśnienia
-// value - 16-bitowa korekcja pomiaru
+// Sensor calibration
+// value - 16-bit correction
 void lps25hb_set_calib(uint16_t value);
+
+//Trip mode height differnce calculation
+float heightDiff(float h);
+

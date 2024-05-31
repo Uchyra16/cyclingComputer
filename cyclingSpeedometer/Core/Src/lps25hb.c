@@ -73,3 +73,20 @@ void lps25hb_set_calib(uint16_t value)
 	lps_write_reg(LPS25HB_RPDS_L, value);
 	lps_write_reg(LPS25HB_RPDS_H, value >> 8);
 }
+
+volatile float minimum_h = 0;
+volatile float maximum_h = 0;
+
+float heightDiff(float h)
+{
+	if(h < minimum_h) {
+		minimum_h = h;
+	}
+
+	if(h > maximum_h) {
+		maximum_h = h;
+	}
+
+	return maximum_h - minimum_h;
+}
+

@@ -1,0 +1,9 @@
+#pragma once
+
+#include "tim.h"
+
+extern float speed;
+
+//Fucntion responsible for:
+//speed calculations based on radius and detection period
+float speedValue(uint32_t period, uint8_t wheelSize_inch);

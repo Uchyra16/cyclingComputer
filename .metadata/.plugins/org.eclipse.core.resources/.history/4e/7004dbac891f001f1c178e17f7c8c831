@@ -1,0 +1,13 @@
+#pragma once
+
+#include "tim.h"
+
+extern float speed;
+uint8_t wheelSize;
+//Fucntion responsible for:
+//speed calculations based on radius and detection period
+float speedValue(uint32_t period, uint8_t wheelSize_inch);
+
+//Fuction responsible for:
+//distance calculations based on hall sensor activation counter
+float distanceCovered(uint32_t hallCounter, uint8_t wheelSize_inch);

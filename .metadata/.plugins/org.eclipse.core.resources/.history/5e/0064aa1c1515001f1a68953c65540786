@@ -1,6 +1,0 @@
-#pragma once
-
-#include <stdint.h>
-
-//Initialization of the LCD
-void lcd_init(void);
